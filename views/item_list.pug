@@ -1,0 +1,10 @@
+extends layout
+block content
+  ul
+    each item in item_list
+      li
+        a(href=item.url) #{item.name}
+        p= item.description
+        a(href=item.category.url) #{item.category.name}
+        p= item.price_formatted
+        p= item.quantity
