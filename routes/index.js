@@ -10,6 +10,10 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/items', itemController.item_list);
+router.get('/item/:id', itemController.item_detail);
+
 router.get('/categories', categoryController.category_list);
+router.get('/category/:id', categoryController.category_detail);
+
 
 module.exports = router;

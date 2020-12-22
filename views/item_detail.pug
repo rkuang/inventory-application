@@ -1,0 +1,7 @@
+extends layout
+block content
+  h1 #{title}: #{item.name}
+  p= item.description
+  a(href=item.category.url) #{item.category.name}
+  p= item.price
+  p= item.quantity

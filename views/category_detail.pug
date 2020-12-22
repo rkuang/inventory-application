@@ -1,0 +1,14 @@
+extends layout
+block content
+  h1 #{title}: #{category.name}
+  p= category.description
+
+  h2 Other #{category.name} Items:
+  ul
+    each item in category_items
+      li
+        a(href=item.url) #{item.name}
+        p= item.description
+        a(href=item.category.url) #{item.category.name}
+        p= item.price_formatted
+        p= item.quantity
