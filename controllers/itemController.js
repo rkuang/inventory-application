@@ -58,11 +58,12 @@ module.exports = {
             errors: errors.array()
           })
         })
+      } else {
+        item.save((err) => {
+          if (err) next(err);
+          res.redirect(item.url);
+        });
       }
-      item.save((err, item) => {
-        if (err) next(err);
-        res.redirect(item.url);
-      })
     }
   ]
 }

@@ -1,0 +1,15 @@
+extends layout
+block content
+  h1= title
+  form(method="POST", action="")
+    label(for="name") Category Name
+    input(type="text", name="name", value=category ? category.name : '')
+
+    label(for="description") Category Description
+    input(type="text", name="description", value=category ? category.description : '')
+
+    button(type="submit") Submit
+
+  each error in errors ? errors : []
+    ul
+      li= error.msg

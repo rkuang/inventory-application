@@ -3,7 +3,7 @@ block content
   h1 #{title}: #{category.name}
   p= category.description
 
-  h2 Other #{category.name} Items:
+  h2 #{category.name} Items:
   ul
     each item in category_items
       li
