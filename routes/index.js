@@ -10,6 +10,8 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/items', itemController.item_list);
+router.get('/item/create', itemController.item_create_get);
+router.post('/item/create', itemController.item_create_post);
 router.get('/item/:id', itemController.item_detail);
 
 router.get('/categories', categoryController.category_list);

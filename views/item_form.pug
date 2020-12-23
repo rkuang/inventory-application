@@ -1,0 +1,26 @@
+extends layout
+block content
+  h1= title
+  form(method="POST", action="")
+    label(for="name") Item Name
+    input(type="text", name="name", value=item ? item.name : '')
+
+    label(for="description") Item Description
+    input(type="text", name="description", value=item ? item.description : '')
+
+    label(for="category") Item Category
+    select(name="category")
+      each category in categories
+        option(value=category._id, selected=(item && item.category._id.toString() === category._id.toString() ? true : false)) #{category.name}
+
+    label(for="price") Item Price
+    input(type="number", step="any", name="price", value=item ? item.price : '')
+
+    label(for="quantity") Item Quantity
+    input(type="number", step="1", name="quantity", value=item ? item.quantity : '')
+
+    button(type="submit") Submit
+
+  each error in errors ? errors : []
+    ul
+      li= error.msg
