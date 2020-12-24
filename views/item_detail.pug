@@ -1,6 +1,8 @@
 extends layout
 block content
   h1 #{title}: #{item.name}
+  if item.image_path
+    img(src=item.image_path, style="width: auto; height: 200px;")
   p= item.description
   a(href=item.category.url) #{item.category.name}
   p= item.price

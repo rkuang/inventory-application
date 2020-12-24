@@ -1,7 +1,10 @@
 extends layout
 block content
   h1= title
-  form(method="POST", action="")
+  form(method="POST", action="", enctype="multipart/form-data")
+    label(for="image") Item Image
+    input(type="file", name="image")
+
     label(for="name") Item Name
     input(type="text", name="name", value=item ? item.name : '')
 

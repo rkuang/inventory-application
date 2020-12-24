@@ -9,6 +9,7 @@ const ItemSchema = new Schema({
   category: { type: Schema.Types.ObjectId, ref: 'Category', required: true },
   price: { type: Number, required: true, min: 0 },
   quantity: { type: Number, required: true, min: 0 },
+  image_path: {type: String }
 });
 
 ItemSchema

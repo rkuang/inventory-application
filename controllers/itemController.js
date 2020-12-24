@@ -47,7 +47,8 @@ module.exports = {
         description: req.body.description,
         category: req.body.category,
         price: req.body.price,
-        quantity: req.body.quantity
+        quantity: req.body.quantity,
+        image_path: req.file ? '/uploads/'+req.file.filename : undefined,
       });
       if (!errors.isEmpty()) {
         Category.find({}, 'name').sort([['name', 'asc']]).exec((err, categories) => {
@@ -125,6 +126,7 @@ module.exports = {
         category: req.body.category,
         price: req.body.price,
         quantity: req.body.quantity,
+        image_path: req.file ? '/uploads/'+req.file.filename : undefined,
         _id: req.params.id
       });
       if (!errors.isEmpty()) {
